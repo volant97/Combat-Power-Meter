@@ -33,13 +33,19 @@
     - colors
     - fontFamily
 
-- 추가 작업 필요
-  - public 정리
-  - favicon 설정
-  - layout 설정
-    - header, main, footer 설정
-
 #### 0.1.1
 
 - layout 수정
 - page test
+
+#### 0.1.2
+
+- layout
+  - header, main, footer 설정중
+- not-found page 제작
+
+- 추가 작업 필요
+  - public 정리
+  - favicon 설정
+  - layout 설정
+    - header, main, footer 설정 중...
