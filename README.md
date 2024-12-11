@@ -36,3 +36,10 @@
 - 추가 작업 필요
   - public 정리
   - favicon 설정
+  - layout 설정
+    - header, main, footer 설정
+
+#### 0.1.1
+
+- layout 수정
+- page test

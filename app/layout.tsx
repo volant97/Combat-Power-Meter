@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="max-w-md h-[100dvh] overflow-y-hidden">
+    <html lang="ko" className="mx-auto max-w-md h-[100dvh] overflow-y-hidden">
       <body className="w-full h-[100dvh] px-6 py-8 overflow-y-auto overflow-x-hidden scrollbar-hide antialiased border-2">
         {children}
       </body>
