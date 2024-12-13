@@ -53,7 +53,15 @@
   - 유저 카드 제작
   - 유저 페이지로 Link 적용
 - user page
+
   - params 출력
+
+  #### 0.1.4
+
+- layout
+  - 리팩토링
+- daisyui 설치
+  - not-found page 적용 및 테스트트
 
 #### +a
 

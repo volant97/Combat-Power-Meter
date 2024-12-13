@@ -6,7 +6,11 @@ function notFound() {
       <p className="text-red-500 font-semibold text-xl">
         측정 구역을 벗어났습니다 o_o;;
       </p>
-      <Link href={"/"}>돌아가기</Link>
+      <Link href={"/"}>
+        <button className="btn btn-outline btn-error !text-maintextc">
+          Home
+        </button>
+      </Link>
     </div>
   );
 }

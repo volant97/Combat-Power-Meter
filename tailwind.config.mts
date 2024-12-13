@@ -22,5 +22,5 @@ export default {
       SDSamliphopangche: ["SDSamliphopangche_Basic"],
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],
 } satisfies Config;
