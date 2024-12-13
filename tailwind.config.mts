@@ -21,6 +21,10 @@ export default {
       Freesentation: ["Freesentation-9Black"],
       SDSamliphopangche: ["SDSamliphopangche_Basic"],
     },
+    boxShadow: {
+      headerShadow: "0 10px 10px -7px rgba(0, 0, 0, 0.5)",
+      footerShadow: "0 -10px 10px -7px rgba(0, 0, 0, 0.5)",
+    },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],
 } satisfies Config;

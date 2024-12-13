@@ -56,12 +56,20 @@
 
   - params 출력
 
-  #### 0.1.4
+#### 0.1.4
 
 - layout
   - 리팩토링
 - daisyui 설치
   - not-found page 적용 및 테스트트
+
+#### 0.1.5
+
+- home page
+  - 카드 그림자 추가
+- header, footer
+  - 아이콘 설정
+  - 그림자 설정
 
 #### +a
 
