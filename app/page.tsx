@@ -5,8 +5,28 @@ export default function HomePage() {
 
   return (
     <div>
-      <div className="flex flex-col gap-6">
-        <p className="text-pointc">전투력 측정기 </p>
+      <div className="flex flex-col gap-4">
+        <div className="flex items-end gap-2">
+          <h1 className="text-pointc text-2xl font-bold">[LOVe]</h1>
+          <h2 className="text-pointc text-xl font-bold">LOVE IS WAR</h2>
+        </div>
+        <div className="flex gap-3">
+          <button className="w-auto h-8 px-2 text-sm border-2 border-pointc rounded-md">
+            최신 순
+          </button>
+          <button className="w-auto h-8 px-2 text-sm border-2 border-gray-600 rounded-md">
+            전투력 순
+          </button>
+          <button className="w-auto h-8 px-2 text-sm border-2 border-gray-600 rounded-md">
+            레벨 순
+          </button>
+          <button className="w-auto h-8 px-2 text-sm border-2 border-gray-600 rounded-md">
+            성장률 순
+          </button>
+          <button className="w-auto h-8 px-2 text-sm border-2 border-gray-600 rounded-md">
+            이름 순
+          </button>
+        </div>
         <div className="flex flex-wrap -mx-2">
           {testArray.map((v, i) => (
             <div key={i} className="w-1/2 h-full p-2">

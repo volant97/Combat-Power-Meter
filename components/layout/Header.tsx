@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "../icons/Logo";
 import ListIcon from "../icons/ListIcon";
-import UserIcon from "../icons/UserIcon";
+import LoginOrMy from "./LoginOrMy";
 
 export default function Header() {
   return (
@@ -18,12 +18,7 @@ export default function Header() {
       >
         <Logo />
       </Link>
-      <Link
-        href={"/my/1"}
-        className="absolute right-0 flex justify-end items-center h-[8dvh] aspect-square pr-5"
-      >
-        <UserIcon />
-      </Link>
+      <LoginOrMy />
     </header>
   );
 }
