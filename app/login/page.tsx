@@ -2,19 +2,36 @@
 import { useState } from "react";
 
 export default function LoginPage() {
-  const [nickname, setNickname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [nickname, setNickname] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
 
-  const onSubmitHandler = (e) => {
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
+  const [isShowConfirmPassword, setIsShowConfirmPassword] =
+    useState<boolean>(false);
+
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(nickname, email, password);
 
-    if (nickname && email && password) {
-      console.log("로그인 성공!");
+    if (nickname && email && password && confirmPassword) {
+      if (password === confirmPassword) {
+        setIsModal(true);
+      } else {
+        alert("비밀번호를 다시 확인해주세요");
+      }
     } else {
-      console.log("모든 필드를 입력하세요.");
+      alert("모든 내용을 입력해주세요.");
     }
+  };
+
+  const toggleShowPassword = () => {
+    setIsShowPassword((prev) => !prev);
+  };
+
+  const toggleShowConfirmPassword = () => {
+    setIsShowConfirmPassword((prev) => !prev);
   };
 
   return (
@@ -75,18 +92,61 @@ export default function LoginPage() {
           />
         </svg>
         <input
-          type="password"
+          type={isShowPassword ? "text" : "password"}
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
           }}
           className="grow"
-          placeholder="*******"
+          placeholder={isShowPassword ? password : "******"}
         />
+        <button type="button" onClick={toggleShowPassword}>
+          {isShowPassword ? "숨기기" : "보기"}
+        </button>
+      </label>
+      <label className="input input-bordered flex items-center gap-2 w-4/5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          className="h-4 w-4 opacity-70"
+        >
+          <path
+            fillRule="evenodd"
+            d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+            clipRule="evenodd"
+          />
+        </svg>
+        <input
+          type={isShowConfirmPassword ? "text" : "password"}
+          value={confirmPassword}
+          onChange={(e) => {
+            setConfirmPassword(e.target.value);
+          }}
+          className="grow"
+          placeholder={isShowConfirmPassword ? confirmPassword : "******"}
+        />
+        <button type="button" onClick={toggleShowConfirmPassword}>
+          {isShowConfirmPassword ? "숨기기" : "보기"}
+        </button>
       </label>
       <button type="submit" className="size-12 border-2">
         확인
       </button>
+      {isModal && (
+        <div className="fixed top-24 flex flex-col gap-2 bg-green-500 [&_*]:bg-green-500 text-white p-4 rounded-md shadow-lg flex justify-between items-center">
+          <p>{nickname}</p>
+          <p>{email}</p>
+          <p>{password}</p>
+          <button
+            type="button"
+            onClick={() => setIsModal(false)}
+            className="p-2 border-2"
+          >
+            닫기
+          </button>
+        </div>
+      )}
     </form>
   );
 }

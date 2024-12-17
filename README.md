@@ -80,7 +80,14 @@
 #### 0.1.7
 
 - login page
-  - input과 useState 연결
+  - input과 useState 연결 중...
+
+#### 0.1.8
+
+- login page
+  - 모달 제작 및 테스트 적용
+  - 비밀번호 확인 input 추가
+  - 입력 테스트 완료
 
 #### +a
 
