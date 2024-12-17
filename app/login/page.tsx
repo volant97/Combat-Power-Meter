@@ -51,7 +51,7 @@ export default function LoginPage() {
         <input
           type="text"
           value={nickname}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setNickname(e.target.value);
           }}
           className="grow"
@@ -71,7 +71,7 @@ export default function LoginPage() {
         <input
           type="email"
           value={email}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(e.target.value);
           }}
           className="grow"
@@ -94,7 +94,7 @@ export default function LoginPage() {
         <input
           type={isShowPassword ? "text" : "password"}
           value={password}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
           }}
           className="grow"
@@ -120,7 +120,7 @@ export default function LoginPage() {
         <input
           type={isShowConfirmPassword ? "text" : "password"}
           value={confirmPassword}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setConfirmPassword(e.target.value);
           }}
           className="grow"
