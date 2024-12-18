@@ -101,7 +101,11 @@
 #### 0.1.11
 
 - supabase 연결중
-  - auth
+
+#### 0.1.12
+
+- supabase 연결
+  - testData 연결 확인
 
 #### +a
 
@@ -111,3 +115,9 @@
   - layout 설정
     - header, main, footer 설정 중...
   - 비밀번호 암호화
+  - supabase
+    - auth
+      - 카카오
+      - 구글
+    - 테이블 연결
+    - 폴리시 설정
