@@ -94,6 +94,10 @@
 - login page
   - type 부여
 
+#### 0.1.10
+
+- supabase 설치
+
 #### +a
 
 - 추가 작업 필요
