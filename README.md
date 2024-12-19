@@ -107,6 +107,12 @@
 - supabase 연결
   - testData 연결 확인
 
+#### 0.1.13
+
+- home page
+  - 정렬 버튼 css 수정
+    - 선택됐을 때 테두리 색상 focus
+
 #### +a
 
 - 추가 작업 필요
