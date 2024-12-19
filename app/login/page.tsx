@@ -37,7 +37,7 @@ export default function LoginPage() {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="flex flex-col justify-center items-center gap-3 w-full h-3/5"
+      className="flex flex-col justify-center items-center gap-3 w-full h-4/5"
     >
       <label className="input input-bordered flex items-center gap-2 w-4/5">
         <svg
@@ -54,7 +54,7 @@ export default function LoginPage() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setNickname(e.target.value);
           }}
-          className="grow"
+          className="grow h-20"
           placeholder="닉네임"
         />
       </label>
@@ -74,11 +74,11 @@ export default function LoginPage() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(e.target.value);
           }}
-          className="grow"
+          className="grow h-20"
           placeholder="이메일"
         />
       </label>
-      <label className="input input-bordered flex items-center gap-2 w-4/5">
+      <label className="relative input input-bordered flex items-center gap-2 w-4/5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -97,14 +97,18 @@ export default function LoginPage() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
           }}
-          className="grow"
+          className="grow h-20"
           placeholder={isShowPassword ? password : "******"}
         />
-        <button type="button" onClick={toggleShowPassword}>
+        <button
+          type="button"
+          onClick={toggleShowPassword}
+          className="absolute right-4"
+        >
           {isShowPassword ? "숨기기" : "보기"}
         </button>
       </label>
-      <label className="input input-bordered flex items-center gap-2 w-4/5">
+      <label className="relative input input-bordered flex items-center gap-2 w-4/5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -123,10 +127,14 @@ export default function LoginPage() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setConfirmPassword(e.target.value);
           }}
-          className="grow"
+          className="grow h-20"
           placeholder={isShowConfirmPassword ? confirmPassword : "******"}
         />
-        <button type="button" onClick={toggleShowConfirmPassword}>
+        <button
+          type="button"
+          onClick={toggleShowConfirmPassword}
+          className="absolute right-4"
+        >
           {isShowConfirmPassword ? "숨기기" : "보기"}
         </button>
       </label>
