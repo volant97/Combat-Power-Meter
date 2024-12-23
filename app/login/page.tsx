@@ -116,7 +116,7 @@ export default function LoginPage() {
             setPassword(e.target.value);
           }}
           className="grow h-20"
-          placeholder={isShowPassword ? password : "******"}
+          placeholder={isShowPassword ? password : "비밀번호 (6자 이상)"}
         />
         <button
           type="button"
@@ -146,7 +146,9 @@ export default function LoginPage() {
             setConfirmPassword(e.target.value);
           }}
           className="grow h-20"
-          placeholder={isShowConfirmPassword ? confirmPassword : "******"}
+          placeholder={
+            isShowConfirmPassword ? confirmPassword : "비밀번호 확인 (6자 이상)"
+          }
         />
         <button
           type="button"

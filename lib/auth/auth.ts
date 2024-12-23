@@ -15,14 +15,11 @@ export async function signup(
   password: string,
   nickname: string
 ) {
-  const BASE_USER_IMG =
-    "https://vmofxrrcxebmztaxrqha.supabase.co/storage/v1/object/public/userImg/base/love01.jpg";
-
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
-      data: { nickname, user_img: BASE_USER_IMG }, // raw_user_meta_data(user_metadata)에 닉네임 추가
+      data: { nickname }, // raw_user_meta_data(user_metadata)에 닉네임 추가
     },
   });
 
