@@ -132,6 +132,11 @@
   - getUser 함수 테스트
   - ts파일 함수 선언형(function)으로 통일
 
+#### 0.1.17
+
+- supabase
+  - signup 시 metadata에 nickname 추가
+
 #### +a
 
 - 추가 작업 필요

@@ -1,5 +1,5 @@
 "use client";
-import { getUser } from "@/lib/auth/auth";
+import { getUser, signup } from "@/lib/auth/auth";
 import { supabase } from "@/lib/supabase-client";
 import { useEffect, useState } from "react";
 
@@ -20,16 +20,11 @@ export default function LoginPage() {
     if (nickname && email && password && confirmPassword) {
       if (password === confirmPassword) {
         setIsModal(true);
-
-        const { data, error } = await supabase.auth.signUp({
-          email,
-          password,
-        });
-
-        if (error) {
+        try {
+          const data = await signup(email, password, nickname);
+          alert(`${data.user?.user_metadata.nickname}님 반갑습니다!`);
+        } catch (error) {
           alert(error);
-        } else {
-          alert(`${data.user?.email}님 반갑습니다!`);
         }
       } else {
         alert("비밀번호를 다시 확인해주세요");
@@ -47,14 +42,15 @@ export default function LoginPage() {
     setIsShowConfirmPassword((prev) => !prev);
   };
 
-  useEffect(() => {
-    const aaa = async () => {
-      const bbb = await getUser();
-      console.log(bbb?.email);
-    };
+  // test
+  // useEffect(() => {
+  //   const aaa = async () => {
+  //     const bbb = await getUser();
+  //     console.log("닉넴쓰", bbb?.user_metadata?.nickname);
+  //   };
 
-    aaa();
-  });
+  //   aaa();
+  // });
 
   return (
     <form

@@ -9,10 +9,28 @@ export async function getUser() {
 }
 
 // 회원가입
-// supabase.auth.signUp({
-//   email,
-//   password,
-// });
+// metadata에 정보 추가
+export async function signup(
+  email: string,
+  password: string,
+  nickname: string
+) {
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { nickname }, // user_metadata에 닉네임 추가
+    },
+  });
+
+  if (error) {
+    throw new Error("데이터를 가져오는 중 에러가 발생하였습니다.");
+  }
+
+  return data;
+}
+
+// 로그인
 
 // 로그아웃
 export async function logout() {
