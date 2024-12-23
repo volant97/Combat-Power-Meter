@@ -137,6 +137,15 @@
 - supabase
   - signup 시 metadata에 nickname 추가
 
+#### 0.1.18
+
+- supabase
+  - 트리거 수정
+  - 회원가입 정상 작동 확인
+  - storage
+    - 기본 프로필 이미지 설정
+    - 회원가입 시 기본 프로필 이미지 자동 적용
+
 #### +a
 
 - 추가 작업 필요
