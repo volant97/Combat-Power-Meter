@@ -1,4 +1,5 @@
 "use client";
+import { supabase } from "@/lib/supabase-client";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -12,12 +13,23 @@ export default function LoginPage() {
   const [isShowConfirmPassword, setIsShowConfirmPassword] =
     useState<boolean>(false);
 
-  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (nickname && email && password && confirmPassword) {
       if (password === confirmPassword) {
         setIsModal(true);
+
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+        });
+
+        if (error) {
+          alert(error);
+        } else {
+          alert(`${data.user?.email}님 반갑습니다!`);
+        }
       } else {
         alert("비밀번호를 다시 확인해주세요");
       }
