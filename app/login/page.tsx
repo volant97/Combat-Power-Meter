@@ -1,6 +1,7 @@
 "use client";
+import { getUser } from "@/lib/auth/auth";
 import { supabase } from "@/lib/supabase-client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LoginPage() {
   const [nickname, setNickname] = useState<string>("");
@@ -45,6 +46,15 @@ export default function LoginPage() {
   const toggleShowConfirmPassword = () => {
     setIsShowConfirmPassword((prev) => !prev);
   };
+
+  useEffect(() => {
+    const aaa = async () => {
+      const bbb = await getUser();
+      console.log(bbb?.email);
+    };
+
+    aaa();
+  });
 
   return (
     <form
