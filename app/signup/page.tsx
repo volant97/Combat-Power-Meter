@@ -1,6 +1,7 @@
 "use client";
 
 import { signup } from "@/lib/auth/auth";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SignupPage() {
@@ -13,6 +14,8 @@ export default function SignupPage() {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
   const [isShowConfirmPassword, setIsShowConfirmPassword] =
     useState<boolean>(false);
+
+  const router = useRouter();
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,6 +42,11 @@ export default function SignupPage() {
 
   const toggleShowConfirmPassword = () => {
     setIsShowConfirmPassword((prev) => !prev);
+  };
+
+  const modalBtnOnClickHandler = () => {
+    setIsModal(false);
+    router.push("/");
   };
 
   return (
@@ -160,7 +168,7 @@ export default function SignupPage() {
           <p>{`${nickname}님 가입을 축하합니다!`}</p>
           <button
             type="button"
-            onClick={() => setIsModal(false)}
+            onClick={modalBtnOnClickHandler}
             className="p-2 border-2"
           >
             닫기

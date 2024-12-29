@@ -174,6 +174,13 @@
   - input 입력 후 Tab할 때 특정 버튼 선택되지 않도록 설정
     - tabIndex={-1}
 
+#### 0.1.22
+
+- login page
+  - 로그인 시 home page로 이동
+- signup page
+  - 회원가입 시 home page로 이동
+
 #### +a
 
 - 추가 작업 필요

@@ -2,6 +2,7 @@
 
 import { login } from "@/lib/auth/auth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -11,6 +12,8 @@ export default function LoginPage() {
 
   const [isModal, setIsModal] = useState<boolean>(false);
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,6 +33,11 @@ export default function LoginPage() {
 
   const toggleShowPassword = () => {
     setIsShowPassword((prev) => !prev);
+  };
+
+  const modalBtnOnClickHandler = () => {
+    setIsModal(false);
+    router.push("/");
   };
 
   return (
@@ -107,7 +115,7 @@ export default function LoginPage() {
           <p>{`${nickname}님 반갑습니다!`}</p>
           <button
             type="button"
-            onClick={() => setIsModal(false)}
+            onClick={modalBtnOnClickHandler}
             className="p-2 border-2"
           >
             닫기
