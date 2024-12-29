@@ -1,7 +1,7 @@
 "use client";
 
+import LoginModal from "@/components/login/LoginModal";
 import { signup } from "@/lib/auth/auth";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SignupPage() {
@@ -14,8 +14,6 @@ export default function SignupPage() {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
   const [isShowConfirmPassword, setIsShowConfirmPassword] =
     useState<boolean>(false);
-
-  const router = useRouter();
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,11 +40,6 @@ export default function SignupPage() {
 
   const toggleShowConfirmPassword = () => {
     setIsShowConfirmPassword((prev) => !prev);
-  };
-
-  const modalBtnOnClickHandler = () => {
-    setIsModal(false);
-    router.push("/");
   };
 
   return (
@@ -151,8 +144,8 @@ export default function SignupPage() {
         <button
           type="button"
           onClick={toggleShowConfirmPassword}
-          className="absolute right-4"
           tabIndex={-1}
+          className="absolute right-4"
         >
           {isShowConfirmPassword ? "숨기기" : "보기"}
         </button>
@@ -164,16 +157,11 @@ export default function SignupPage() {
         확인
       </button>
       {isModal && (
-        <div className="fixed top-24 flex flex-col gap-2 bg-green-500 [&_*]:bg-green-500 text-white p-4 rounded-md shadow-lg flex justify-between items-center">
-          <p>{`${nickname}님 가입을 축하합니다!`}</p>
-          <button
-            type="button"
-            onClick={modalBtnOnClickHandler}
-            className="p-2 border-2"
-          >
-            닫기
-          </button>
-        </div>
+        <LoginModal
+          select="signup"
+          nickname={nickname}
+          setIsModal={setIsModal}
+        />
       )}
     </form>
   );
