@@ -165,6 +165,15 @@
   - login page → signup page
   - 버튼 css 수정
 
+#### 0.1.21
+
+- login page
+  - 로그인 로직 적용
+  - 모달 적용
+  - 회원가입 버튼 제작
+  - input 입력 후 Tab할 때 특정 버튼 선택되지 않도록 설정
+    - tabIndex={-1}
+
 #### +a
 
 - 추가 작업 필요

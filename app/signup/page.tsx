@@ -19,10 +19,9 @@ export default function SignupPage() {
 
     if (nickname && email && password && confirmPassword) {
       if (password === confirmPassword) {
-        setIsModal(true);
         try {
-          const data = await signup(email, password, nickname);
-          alert(`${data.user?.user_metadata.nickname}님 반갑습니다!`);
+          await signup(email, password, nickname);
+          setIsModal(true);
         } catch (error) {
           alert(error);
         }
@@ -112,6 +111,7 @@ export default function SignupPage() {
           type="button"
           onClick={toggleShowPassword}
           className="absolute right-4"
+          tabIndex={-1}
         >
           {isShowPassword ? "숨기기" : "보기"}
         </button>
@@ -144,6 +144,7 @@ export default function SignupPage() {
           type="button"
           onClick={toggleShowConfirmPassword}
           className="absolute right-4"
+          tabIndex={-1}
         >
           {isShowConfirmPassword ? "숨기기" : "보기"}
         </button>
@@ -156,9 +157,7 @@ export default function SignupPage() {
       </button>
       {isModal && (
         <div className="fixed top-24 flex flex-col gap-2 bg-green-500 [&_*]:bg-green-500 text-white p-4 rounded-md shadow-lg flex justify-between items-center">
-          <p>{nickname}</p>
-          <p>{email}</p>
-          <p>{password}</p>
+          <p>{`${nickname}님 가입을 축하합니다!`}</p>
           <button
             type="button"
             onClick={() => setIsModal(false)}

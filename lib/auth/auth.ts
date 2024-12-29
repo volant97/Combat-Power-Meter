@@ -33,7 +33,7 @@ export async function signup(
 
 // 로그인
 export async function login(email: string, password: string) {
-  const { error } = await supabase.auth.signInWithPassword({
+  const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
@@ -41,6 +41,8 @@ export async function login(email: string, password: string) {
   if (error) {
     throw new Error(`로그인 중 에러가 발생했습니다. (${error.message})`);
   }
+
+  return data;
 }
 
 // 로그아웃
