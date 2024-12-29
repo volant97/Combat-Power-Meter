@@ -5,6 +5,7 @@ export async function getUser() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
   return user;
 }
 
@@ -24,16 +25,29 @@ export async function signup(
   });
 
   if (error) {
-    throw new Error("데이터를 가져오는 중 에러가 발생하였습니다.");
+    throw new Error(`회원가입 중 에러가 발생했습니다. (${error.message})`);
   }
 
   return data;
 }
 
 // 로그인
+export async function login(email: string, password: string) {
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    throw new Error(`로그인 중 에러가 발생했습니다. (${error.message})`);
+  }
+}
 
 // 로그아웃
 export async function logout() {
   const { error } = await supabase.auth.signOut();
-  if (error) console.error("로그아웃 중 에러가 발생하였습니다.", error);
+
+  if (error) {
+    throw new Error(`로그아웃 중 에러가 발생했습니다. (${error.message})`);
+  }
 }

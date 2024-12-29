@@ -24,6 +24,7 @@ export default function TestPage() {
 
   return (
     <div>
+      <p className="text-pointc text-3xl">유저 닉네임</p>
       {testDatas.map((v, i) => (
         <div key={i}>
           <p>{v.nickname}</p>

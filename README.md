@@ -155,6 +155,16 @@
 - login page
   - 비밀번호 placeholder 수정
 
+#### 0.1.20
+
+- supabase
+  - auth
+    - 로그인 로직 작성
+    - auth.ts 에러 출력 수정
+- signup page
+  - login page → signup page
+  - 버튼 css 수정
+
 #### +a
 
 - 추가 작업 필요
