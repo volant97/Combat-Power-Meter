@@ -226,6 +226,15 @@
   - `<></>` : 단순한 그룹화
   - `<Fragment></Fragment>` : 속성 부여 가능
 
+#### 0.1.27
+
+- recoil
+  - 프로필 정보도 저장
+- MyProfile과 Card 분리해서 접속하도록
+  - LoginOrMyCard → LoginOrMyProfile 변경
+- my page
+  - 로그인 정보 출력
+
 #### +a
 
 - 추가 작업 필요

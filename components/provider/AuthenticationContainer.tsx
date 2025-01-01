@@ -5,6 +5,7 @@ import { userState } from "@/recoil/user";
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import LayoutContainer from "../layout/LayoutContainer";
+import { UserStateType } from "@/types/user";
 
 interface Props {
   children: React.ReactNode;
@@ -15,35 +16,32 @@ export default function AuthenticationContainer({ children }: Props) {
   const setUser = useSetRecoilState(userState);
 
   const checkAuthInitialized = () => {
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (session) {
-          // supabase
-          //   .from("custom_users")
-          //   .select()
-          //   .eq("uid", session.user.id)
-          //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          //   .returns<any>()
-          //   .single()
-          //   .then((response) => {
-          //     const profile = response.data; //custom_users
-          //     setUser({ id: session.user.id });
-          //   });
-          console.log("로그인", session.user.user_metadata.nickname, !!session);
-          setUser({ id: session.user.id });
-        } else {
-          console.log("로그아웃", !!session);
-          setUser(null);
-        }
-        setIsAuthInitialized(true);
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (session) {
+        supabase
+          .from("custom_users")
+          .select()
+          .eq("uid", session.user.id)
+          .returns<UserStateType>()
+          .single()
+          .then((response) => {
+            const profile = response.data; //custom_users
+            // console.log("프로필 : ", profile);
+            setUser({ id: session.user.id, profile });
+          });
+        // console.log("로그인", session.user.user_metadata.nickname, !!session);
+      } else {
+        // console.log("로그아웃", !!session);
+        setUser(null);
       }
-    );
+      setIsAuthInitialized(true);
+    });
   };
 
   useEffect(() => {
     checkAuthInitialized();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // [isAuthInitialized, setUser]
 
   return (
     <>

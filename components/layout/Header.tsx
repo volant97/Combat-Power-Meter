@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "../icons/Logo";
 import ListIcon from "../icons/ListIcon";
-import LoginOrMyCard from "./LoginOrMyCard";
+import LoginOrMyProfile from "./LoginOrMyCard";
 
 export default function Header() {
   return (
@@ -18,7 +18,7 @@ export default function Header() {
       >
         <Logo />
       </Link>
-      <LoginOrMyCard />
+      <LoginOrMyProfile />
     </header>
   );
 }

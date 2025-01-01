@@ -1,16 +1,9 @@
-// import { RegisterType } from '@/types/registerType';
-
-// import { atom } from "recoil";
-
-// export type UserState = { id: string; profile: RegisterType | null } | null;
-// interface UserState {
-//   id: string;
-// }
-
 import { atom } from "recoil";
+import { UserStateType } from "@/types/user";
 
 export interface UserState {
   id: string;
+  profile: UserStateType | null;
 }
 
 /** 로그인 여부 */

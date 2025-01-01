@@ -4,14 +4,14 @@ import LoginIcon from "../icons/LoginIcon";
 import { userState } from "@/recoil/user";
 import { useRecoilValue } from "recoil";
 
-export default function LoginOrMyCard() {
+export default function LoginOrMyProfile() {
   const isLogin = useRecoilValue(userState);
 
   return (
     <>
       {!!isLogin ? (
         <Link
-          href={"/my/1"}
+          href={"/my"}
           className="absolute right-0 flex justify-end items-center h-[8dvh] aspect-square pr-5"
         >
           <UserIcon />
