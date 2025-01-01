@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Logo from "../icons/Logo";
 import ListIcon from "../icons/ListIcon";
-import LoginOrMy from "./LoginOrMy";
+import LoginOrMyCard from "./LoginOrMyCard";
+import Test from "../Test";
 
-export default function Header() {
+export default async function Header() {
   return (
     <header className="sticky top-0 flex justify-center items-center w-full h-[9dvh] px-5 shadow-headerShadow">
       <Link
@@ -18,7 +19,8 @@ export default function Header() {
       >
         <Logo />
       </Link>
-      <LoginOrMy />
+      <LoginOrMyCard />
+      <Test />
     </header>
   );
 }

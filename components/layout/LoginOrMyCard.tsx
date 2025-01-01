@@ -3,10 +3,20 @@
 import Link from "next/link";
 import UserIcon from "../icons/UserIcon";
 import LoginIcon from "../icons/LoginIcon";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { getUser } from "@/lib/auth/auth";
 
-export default function LoginOrMy() {
+export default function LoginOrMyCard() {
   const [isLogin, setIsLogin] = useState<boolean>(false);
+
+  const fetchUser = async () => {
+    const user = await getUser();
+    setIsLogin(!!user);
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <Fragment>

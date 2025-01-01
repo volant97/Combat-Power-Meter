@@ -3,13 +3,13 @@
 import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 
-interface props {
+interface Props {
   select: string;
   nickname: string;
   setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function LoginModal({ select, nickname, setIsModal }: props) {
+export default function LoginModal({ select, nickname, setIsModal }: Props) {
   const router = useRouter();
 
   const modalBtnOnClickHandler = () => {
