@@ -4,7 +4,7 @@ import ListIcon from "../icons/ListIcon";
 import LoginOrMyCard from "./LoginOrMyCard";
 import Test from "../Test";
 
-export default async function Header() {
+export default function Header() {
   return (
     <header className="sticky top-0 flex justify-center items-center w-full h-[9dvh] px-5 shadow-headerShadow">
       <Link

@@ -1,12 +1,16 @@
 "use client";
 
 import { testData } from "@/lib/api/supabaseApi";
+import { testState } from "@/recoil/testtest";
 import { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
 
 export default function TestPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [testDatas, setTestDatas] = useState<any[]>([]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const aaa = useRecoilValue(testState);
+
   const getData = async () => {
     try {
       const data = await testData();
