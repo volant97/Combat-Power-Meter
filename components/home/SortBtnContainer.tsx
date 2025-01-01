@@ -17,6 +17,8 @@ export default function SortBtnContainer() {
     isSelectedBtn(i);
   };
 
+  console.log(selectedBtn);
+
   return (
     <div className="flex gap-3">
       {sortBtnTextArr.map((v, i) => (
