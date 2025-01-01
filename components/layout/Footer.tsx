@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HomeIcon from "../icons/HomeIcon";
+import Test from "../Test";
 
 export default function Footer() {
   return (
@@ -10,6 +11,7 @@ export default function Footer() {
       >
         <HomeIcon />
       </Link>
+      <Test />
     </footer>
   );
 }

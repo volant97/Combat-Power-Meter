@@ -1,30 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import UserIcon from "../icons/UserIcon";
 import LoginIcon from "../icons/LoginIcon";
-import { Fragment, useState } from "react";
 import { userState } from "@/recoil/user";
 import { useRecoilValue } from "recoil";
 
 export default function LoginOrMyCard() {
-  const [isLogin, setIsLogin] = useState<boolean>(false);
-
-  const user = useRecoilValue(userState);
-
-  console.log("이제되냐", !!user);
-
-  // const fetchUser = async () => {
-  //   const user = await getUser();
-  //   setIsLogin(!!user);
-  // };
-
-  // useEffect(() => {
-  //   fetchUser();
-  // }, []);
+  const isLogin = useRecoilValue(userState);
 
   return (
-    <Fragment>
+    <>
       {!!isLogin ? (
         <Link
           href={"/my/1"}
@@ -40,6 +24,6 @@ export default function LoginOrMyCard() {
           <LoginIcon />
         </Link>
       )}
-    </Fragment>
+    </>
   );
 }

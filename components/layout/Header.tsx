@@ -2,7 +2,6 @@ import Link from "next/link";
 import Logo from "../icons/Logo";
 import ListIcon from "../icons/ListIcon";
 import LoginOrMyCard from "./LoginOrMyCard";
-import Test from "../Test";
 
 export default function Header() {
   return (
@@ -20,7 +19,6 @@ export default function Header() {
         <Logo />
       </Link>
       <LoginOrMyCard />
-      <Test />
     </header>
   );
 }

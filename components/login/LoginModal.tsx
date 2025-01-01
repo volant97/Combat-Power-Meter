@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Fragment } from "react";
 
 interface Props {
   select: string;
@@ -22,17 +21,17 @@ export default function LoginModal({ select, nickname, setIsModal }: Props) {
       <div className="flex flex-col items-center gap-2">
         {/* 로그인 모달 */}
         {select === "login" && (
-          <Fragment>
+          <>
             <h1>로그인 성공!</h1>
             <p>{`${nickname}님 반갑습니다!`}</p>
-          </Fragment>
+          </>
         )}
         {/* 회원가입 모달 */}
         {select === "signup" && (
-          <Fragment>
+          <>
             <h1>회원가입 성공!</h1>
             <p>{`${nickname}님 가입을 축하합니다!`}</p>
-          </Fragment>
+          </>
         )}
       </div>
       <button
