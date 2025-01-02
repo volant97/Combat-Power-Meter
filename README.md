@@ -240,19 +240,9 @@
 - home page
   - 선택된 정렬 버튼 활성화 CSS 수정
 
-#### +a
+#### 0.1.29
 
-- 추가 작업 필요
-  - public 정리
-  - favicon 설정
-  - layout 설정
-    - header, main, footer 설정 중...
-  - 비밀번호 암호화
-  - supabase
-    - auth
-      - 카카오
-      - 구글
-    - 테이블 연결
-    - 폴리시 설정
-    - 트리거 설정한 순서 정리
-  - 테스트 하며 지저분한 부분들 정리 필요
+- home page
+  - card
+    - 총 전투력, 1군 명칭 수정
+      - total_cp, group1_cp
