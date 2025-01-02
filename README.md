@@ -251,3 +251,18 @@
 
 - 상수 데이터 파일 생성
 - 버전 표시
+
+#### 0.1.31
+
+- list icon
+  - drop down
+    - 자식 요소에게 모두 CSS 적용
+      - `[&_*] : bg-bgc2`
+    - h-28 대신 max-height를 사용하여 크기 애니메이션이 부드럽게 동작
+      - max-h-0 → max-h-28
+    - overflow-hidden 추가
+      - 애니메이션 중 크기가 줄어들 때 튀어나오지 않도록 설정
+    - transition-all 및 duration-300
+      - 애니메이션의 부드러움을 위해 transition-all을 유지하고, opacity와 max-height가 동시에 변하도록 설정
+    - Hover 효과 부드럽게 조정
+      - li 항목에 transition-colors를 추가하여 호버 효과도 자연스럽게 보이도록 수정
