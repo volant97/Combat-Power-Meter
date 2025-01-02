@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import DropdownList from "../layout/DropdownList";
 
 export default function ListIcon() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null); // 드롭다운 DOM을 참조
 
-  const listIconOnClickHandler = () => {
+  const listIconOnClickHandler = (e: React.MouseEvent<SVGElement>) => {
+    e.preventDefault();
     setIsOpen(!isOpen);
   };
 
@@ -49,19 +51,14 @@ export default function ListIcon() {
 
       {/* 드롭 다운 */}
       <div
-        className={`absolute left-0 mt-2 w-32 bg-white [&_*]:bg-white border border-gray-200 rounded-md shadow-lg z-10 transform transition-all duration-300 overflow-hidden ${
+        className={`absolute left-0 mt-2 w-32 bg-maintextc border-2 border-pointc rounded-md shadow-lg z-10 transform transition-all duration-300 overflow-hidden ${
           isOpen
             ? "opacity-100 scale-100 max-h-40 visible"
             : "opacity-0 scale-95 max-h-0 invisible"
         }`}
       >
-        <ul className={`m-1 rounded-md `}>
-          <li className="p-1 text-black rounded-md hover:bg-red-600 transition-all">
-            공지사항
-          </li>
-          <li className="p-1 text-black rounded-md hover:bg-red-600 transition-all">
-            문의
-          </li>
+        <ul className="flex flex-col m-1 rounded-md bg-maintextc">
+          <DropdownList text="공지사항" link="notices" setIsOpen={setIsOpen} />
         </ul>
       </div>
     </div>

@@ -272,3 +272,14 @@
 - list icon
   - drop down
     - 외부 영역 클릭시 드롭다운 닫히게 설정
+
+#### 0.1.33
+
+- list icon
+  - drop down
+    - CSS
+    - Link 적용
+      - 새로고침 되는 오류 수정
+    - 공지사항 list만 유지
+- notices page 제작
+  - 간단한 공지글 작성
