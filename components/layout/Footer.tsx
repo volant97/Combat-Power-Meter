@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HomeIcon from "../icons/HomeIcon";
-import Test from "../Test";
+import TestLogout from "../TestLogout";
+import Version from "./Version";
 
 export default function Footer() {
   return (
@@ -11,7 +12,8 @@ export default function Footer() {
       >
         <HomeIcon />
       </Link>
-      <Test />
+      <TestLogout />
+      <Version />
     </footer>
   );
 }

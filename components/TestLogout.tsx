@@ -4,7 +4,7 @@ import { logout } from "@/lib/auth/auth";
 import { userState } from "@/recoil/user";
 import { useRecoilValue } from "recoil";
 
-export default function Test() {
+export default function TestLogout() {
   const isLogin = useRecoilValue(userState);
 
   return (
