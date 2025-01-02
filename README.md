@@ -283,3 +283,10 @@
     - 공지사항 list만 유지
 - notices page 제작
   - 간단한 공지글 작성
+
+#### 0.1.34
+
+- notices page
+  - 공지글 수정
+  - 줄바꿈 시 단어 유지
+    - break-keep
