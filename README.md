@@ -266,3 +266,9 @@
       - 애니메이션의 부드러움을 위해 transition-all을 유지하고, opacity와 max-height가 동시에 변하도록 설정
     - Hover 효과 부드럽게 조정
       - li 항목에 transition-colors를 추가하여 호버 효과도 자연스럽게 보이도록 수정
+
+#### 0.1.32
+
+- list icon
+  - drop down
+    - 외부 영역 클릭시 드롭다운 닫히게 설정

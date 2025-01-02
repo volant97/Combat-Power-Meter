@@ -1,16 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ListIcon() {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null); // 드롭다운 DOM을 참조
 
   const listIconOnClickHandler = () => {
     setIsOpen(!isOpen);
   };
 
+  const outsideOnClickHandler = (event: MouseEvent) => {
+    if (
+      dropdownRef.current && // 드롭다운 DOM이 존재하며
+      !dropdownRef.current.contains(event.target as Node) // 클릭한 대상이 드롭다운 내부가 아니면
+    ) {
+      setIsOpen(false); // 드롭다운 닫기
+    }
+  };
+
+  useEffect(() => {
+    // 외부 클릭 이벤트 리스너 등록
+    window.addEventListener("click", outsideOnClickHandler);
+
+    return () => {
+      // 컴포넌트 언마운트 시 이벤트 리스너 해제
+      window.removeEventListener("click", outsideOnClickHandler);
+    };
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
