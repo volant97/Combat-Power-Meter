@@ -271,7 +271,7 @@
 
 - list icon
   - drop down
-    - 외부 영역 클릭시 드롭다운 닫히게 설정
+    - 외부 영역 클릭 시 드롭다운 닫히게 설정
 
 #### 0.1.33
 
@@ -290,3 +290,16 @@
   - 공지글 수정
   - 줄바꿈 시 단어 유지
     - break-keep
+
+#### 0.1.35
+
+- supabase
+
+  - user_cards data table 제작
+  - policies 설정
+  - usercard-api 작성
+  - get test
+  - 타입 작성
+
+- +a
+  - 타입 설치

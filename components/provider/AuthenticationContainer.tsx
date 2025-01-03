@@ -49,7 +49,7 @@ export default function AuthenticationContainer({ children }: Props) {
         <LayoutContainer>{children}</LayoutContainer>
       ) : (
         <div className="flex justify-center items-center h-[100dvh] text-3xl text-pointc">
-          로딩중
+          측정중
         </div>
       )}
     </>
