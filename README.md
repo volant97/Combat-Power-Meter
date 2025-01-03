@@ -240,6 +240,8 @@
 - home page
   - 선택된 정렬 버튼 활성화 CSS 수정
 
+### 2025.01.02
+
 #### 0.1.29
 
 - home page
@@ -291,15 +293,29 @@
   - 줄바꿈 시 단어 유지
     - break-keep
 
+### 2025.01.03
+
 #### 0.1.35
 
 - supabase
-
   - user_cards data table 제작
   - policies 설정
   - usercard-api 작성
   - get test
   - 타입 작성
 
-- +a
-  - 타입 설치
+#### 0.1.36
+
+- AuthenticationContainer
+  - 랜딩 시 로딩화면에서 멈추는 현상 발견
+    - useEffect의 dependency array에 변수 추가
+- 개발자도구 콘솔 에러
+  - 쓰지도 않은 a태그안에 a태그가 들어있다는 에러
+  - 문제 : list icon과 그 내부에 있는 dropdown 둘다 Link 태그를 쓰고 있었음
+  - 해결 : 불필요한 list icon의 Link 태그 제거
+
+#### +a
+
+- 타입 설치
+- user_cards data
+  - get test

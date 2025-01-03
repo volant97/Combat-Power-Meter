@@ -12,6 +12,7 @@ export default function Footer() {
       >
         <HomeIcon />
       </Link>
+      {/* testcode */}
       <TestLogout />
       <Version />
     </footer>

@@ -9,10 +9,8 @@ interface Props {
 
 export default function Provider({ children }: Props) {
   return (
-    <>
-      <RecoilRoot>
-        <AuthenticationContainer>{children}</AuthenticationContainer>
-      </RecoilRoot>
-    </>
+    <RecoilRoot>
+      <AuthenticationContainer>{children}</AuthenticationContainer>
+    </RecoilRoot>
   );
 }

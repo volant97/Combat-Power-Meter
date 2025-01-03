@@ -2,6 +2,7 @@ import SortBtnContainer from "@/components/home/SortBtnContainer";
 import Link from "next/link";
 
 export default function HomePage() {
+  // testcode
   const testArray = new Array(10).fill(0).map((_, i) => 1 + i);
 
   return (

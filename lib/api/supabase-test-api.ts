@@ -1,6 +1,6 @@
 import { supabase } from "../supabase-client";
 
-// test
+// testcode
 export async function testData() {
   const { data, error } = await supabase.from("custom_users").select("*");
 
@@ -11,7 +11,7 @@ export async function testData() {
   return data;
 }
 
-// test
+// testcode
 // 타입 지정
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function updateRegister(uid: any, registerData: any) {

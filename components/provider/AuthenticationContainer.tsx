@@ -5,7 +5,7 @@ import { userState } from "@/recoil/user";
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import LayoutContainer from "../layout/LayoutContainer";
-import { UserStateType } from "@/types/user";
+import { UserStateType } from "@/types/user-type";
 
 interface Props {
   children: React.ReactNode;
@@ -40,8 +40,9 @@ export default function AuthenticationContainer({ children }: Props) {
 
   useEffect(() => {
     checkAuthInitialized();
+    // testcode : isAuthInitialized, setUser
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isAuthInitialized]);
 
   return (
     <>

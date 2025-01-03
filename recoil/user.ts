@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { UserStateType } from "@/types/user";
+import { UserStateType } from "@/types/user-type";
 
 export interface UserState {
   id: string;
