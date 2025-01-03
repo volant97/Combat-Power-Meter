@@ -4,7 +4,6 @@ import { supabase } from "../supabase-client";
 export async function getUsercardData() {
   const { data, error } = await supabase.from("user_cards")
     .select(`*, custom_users (
-        uid,
         nickname,
         user_img
       )`);
@@ -22,7 +21,6 @@ export async function getUsercardDataForCurrentUser(uid: string) {
     .from("user_cards")
     .select(
       `*, custom_users (
-        uid,
         nickname,
         user_img
       )`

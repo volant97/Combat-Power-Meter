@@ -6,7 +6,6 @@ export interface GetUserCardDataType {
   group1_cp: number;
   updated_at: string;
   custom_users: {
-    uid: string;
     nickname: string;
     user_img: string;
   };

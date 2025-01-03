@@ -314,8 +314,17 @@
   - 문제 : list icon과 그 내부에 있는 dropdown 둘다 Link 태그를 쓰고 있었음
   - 해결 : 불필요한 list icon의 Link 태그 제거
 
+#### 0.1.37
+
+- user_cards data
+  - 모든 카드 get test 완료
+    - type 재설정
+  - 현재 유저 카드 get test 완료
+
 #### +a
 
 - 타입 설치
+- 홈 페이지 정리
+  - 컴포넌트화
 - user_cards data
-  - get test
+  - 홈페이지에 로직 작성
