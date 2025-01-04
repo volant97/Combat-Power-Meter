@@ -40,20 +40,26 @@ export default function ListAndDropdown() {
         </button>
 
         {/* 드롭 다운 */}
+
         <div
-          className={`absolute left-0 mt-2 w-32 bg-maintextc border-2 border-pointc rounded-md shadow-lg z-10 transform transition-all duration-300 overflow-hidden ${
+          className={`z-10 transform transition-all duration-300 ${
             isOpen
               ? "opacity-100 scale-100 max-h-40 visible"
               : "opacity-0 scale-95 max-h-0 invisible"
           }`}
         >
-          <ul className="flex flex-col m-1 rounded-md bg-maintextc">
-            <DropdownList
-              text="공지사항"
-              linkText="notices"
-              setIsOpen={setIsOpen}
-            />
-          </ul>
+          <div className="absolute left-1 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[10px] border-l-transparent border-r-transparent border-b-pointc" />
+          <div
+            className={`absolute left-0 mt-2 w-40 bg-bgc2 border-2 border-pointc rounded-md shadow-lg  overflow-hidden shadow-pointc/50 shadow-rightBottomShadow`}
+          >
+            <ul className="flex flex-col m-1 rounded-md bg-bgc2">
+              <DropdownList
+                text="공지사항"
+                linkText="notices"
+                setIsOpen={setIsOpen}
+              />
+            </ul>
+          </div>
         </div>
       </div>
     </div>

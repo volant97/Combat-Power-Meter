@@ -24,6 +24,7 @@ export default {
     boxShadow: {
       headerShadow: "0 10px 10px -7px rgba(0, 0, 0, 0.5)",
       footerShadow: "0 -10px 10px -7px rgba(0, 0, 0, 0.5)",
+      rightBottomShadow: "3px 3px 10px 0px",
     },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],

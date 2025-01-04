@@ -14,7 +14,7 @@ export default function DropdownList({ text, linkText, setIsOpen }: Props) {
   return (
     <Link
       href={`/${linkText}`}
-      className="p-2 text-bgc1 text-center rounded-md bg-maintextc hover:bg-pointc transition-all"
+      className="p-2 text-bgc1 text-center rounded-md bg-bgc2 text-maintextc hover:bg-pointc transition-all"
       onClick={linkOnClickHandler}
     >
       {text}
