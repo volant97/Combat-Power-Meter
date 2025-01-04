@@ -38,7 +38,7 @@ export default function HomePage() {
         <ul className="flex flex-wrap -mx-2">
           {userCards.map((v, i) => (
             <li key={i} className="w-1/2 h-full p-2">
-              <Link href={`/user/${v.card_id}`}>
+              <Link href={`/usercard/${v.card_id}`}>
                 <div className=" flex flex-col gap-2 size-full p-3 bg-bgc2 rounded-md border-2 border-pointc hover:cursor-pointer shadow-md shadow-orange-500/40">
                   <div className="relative w-full aspect-square rounded-md">
                     <Image
@@ -50,8 +50,8 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="flex items-center gap-2 h-7 px-2 [&_*]:bg-pointc bg-pointc rounded-md [&_*]:text-bgc1">
-                    <div className="flex">
-                      <p>LV</p>
+                    <div className="flex items-center gap-[2px]">
+                      <p className="text-sm">LV</p>
                       <p>{v.level}</p>
                     </div>
                     <div className="flex w-full">{v.custom_users.nickname}</div>

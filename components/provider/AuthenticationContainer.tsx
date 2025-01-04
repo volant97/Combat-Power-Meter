@@ -34,15 +34,14 @@ export default function AuthenticationContainer({ children }: Props) {
         // console.log("로그아웃", !!session);
         setUser(null);
       }
-      setIsAuthInitialized(true);
     });
   };
 
   useEffect(() => {
     checkAuthInitialized();
-    // testcode : isAuthInitialized, setUser
+    setIsAuthInitialized(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthInitialized]);
+  }, []);
 
   return (
     <>

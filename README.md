@@ -340,6 +340,13 @@
   - 말풍선 테일 추가
   - 그림자 추가
 
+#### 0.1.40
+
+- 트러블슈팅
+  - AuthenticationContainer
+    - 랜딩 시 로딩화면에서 멈추는 현상 다시 발견
+      - 기존 함수에서 setIsAuthInitialized 함수를 꺼내서 useEffect에 작성
+
 #### +a
 
 - 타입 설치
