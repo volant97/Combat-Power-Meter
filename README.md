@@ -347,6 +347,11 @@
     - 랜딩 시 로딩화면에서 멈추는 현상 다시 발견
       - 기존 함수에서 setIsAuthInitialized 함수를 꺼내서 useEffect에 작성
 
+#### 0.1.41
+
+- usercard page
+  - 현재 페이지 유저의 카드 get
+
 #### +a
 
 - 타입 설치

@@ -25,13 +25,12 @@ export default function AuthenticationContainer({ children }: Props) {
           .returns<UserStateType>()
           .single()
           .then((response) => {
-            const profile = response.data; //custom_users
-            // console.log("프로필 : ", profile);
+            const profile = response.data;
+            // 로그인 시
             setUser({ id: session.user.id, profile });
           });
-        // console.log("로그인", session.user.user_metadata.nickname, !!session);
       } else {
-        // console.log("로그아웃", !!session);
+        // 로그아웃 시
         setUser(null);
       }
     });
