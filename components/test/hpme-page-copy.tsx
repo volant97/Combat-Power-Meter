@@ -1,4 +1,4 @@
-import SortBtnContainer from "@/components/home/SortBtnContainer";
+import SortBtnContainer from "@/components/home/sort_btn/SortBtnContainer";
 import Link from "next/link";
 
 export default function HomePageCopy() {
