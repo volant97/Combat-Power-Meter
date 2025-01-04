@@ -1,7 +1,6 @@
 export default function NoticesPage() {
   return (
     <div className="flex flex-col text-lg break-keep">
-      <div className="h-4" />
       <div className="flex justify-between items-end">
         <h1 className="text-2xl font-bold">새해 복 많이 받으세요!</h1>
         <p className="text-base">2025.01.01</p>

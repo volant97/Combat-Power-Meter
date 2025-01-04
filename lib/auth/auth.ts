@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase-client";
+import { supabase } from "@/lib/common/supabase-client";
 
 // 유저 정보 확인
 export async function getUser() {

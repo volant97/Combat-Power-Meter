@@ -1,11 +1,11 @@
-import Link from "next/link";
-import Logo from "../icons/Logo";
+import Logo from "@/components/icons/Logo";
+import ListAndDropdown from "./dropdown/ListAndDropdown";
 import LoginOrMyProfile from "./LoginOrMyCard";
-import ListAndDropdown from "./ListAndDropdown";
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 flex justify-center items-center w-full h-[9dvh] px-5 shadow-headerShadow">
+    <header className="sticky top-0 flex justify-center items-center w-full h-[9dvh] px-5 bg-bgc1 shadow-headerShadow">
       <ListAndDropdown />
       <Link
         href={"/"}

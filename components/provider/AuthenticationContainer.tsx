@@ -1,6 +1,6 @@
 "use client";
 
-import { supabase } from "@/lib/supabase-client";
+import { supabase } from "@/lib/common/supabase-client";
 import { userState } from "@/recoil/user";
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
@@ -43,14 +43,14 @@ export default function AuthenticationContainer({ children }: Props) {
   }, []);
 
   return (
-    <>
+    <LayoutContainer>
       {isAuthInitialized ? (
-        <LayoutContainer>{children}</LayoutContainer>
+        children
       ) : (
-        <div className="flex justify-center items-center h-[100dvh] text-3xl text-pointc">
+        <div className="flex justify-center items-center h-full text-3xl text-pointc">
           측정중
         </div>
       )}
-    </>
+    </LayoutContainer>
   );
 }

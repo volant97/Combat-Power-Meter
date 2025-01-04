@@ -1,4 +1,4 @@
-import { supabase } from "../supabase-client";
+import { supabase } from "../common/supabase-client";
 
 // testcode
 export async function testData() {

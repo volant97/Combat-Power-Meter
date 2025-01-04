@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import DropdownList from "./DropdownList";
-import ListIcon from "../icons/ListIcon";
+import ListIcon from "../../../icons/ListIcon";
 
 export default function ListAndDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +40,6 @@ export default function ListAndDropdown() {
         </button>
 
         {/* 드롭 다운 */}
-
         <div
           className={`z-10 transform transition-all duration-300 ${
             isOpen
@@ -52,7 +51,7 @@ export default function ListAndDropdown() {
           <div
             className={`absolute left-0 mt-2 w-40 bg-bgc2 border-2 border-pointc rounded-md shadow-lg  overflow-hidden shadow-pointc/30 shadow-rightBottomShadow`}
           >
-            <ul className="flex flex-col m-1 rounded-md bg-bgc2">
+            <ul className="flex flex-col m-1 rounded-md ">
               <DropdownList
                 text="공지사항"
                 linkText="notices"

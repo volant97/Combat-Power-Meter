@@ -1,4 +1,4 @@
-import { supabase } from "../supabase-client";
+import { supabase } from "../common/supabase-client";
 
 // user_cards : 모든 데이터 + custom_users의 일부 데이터 get
 export async function getUsercardData() {

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import UserIcon from "../icons/UserIcon";
-import LoginIcon from "../icons/LoginIcon";
 import { userState } from "@/recoil/user";
 import { useRecoilValue } from "recoil";
+import UserIcon from "@/components/icons/UserIcon";
+import LoginIcon from "@/components/icons/LoginIcon";
 
 export default function LoginOrMyProfile() {
   const isLogin = useRecoilValue(userState);
