@@ -9,7 +9,7 @@ export async function getUsercardData() {
       )`);
 
   if (error) {
-    throw new Error("데이터를 가져오는 중 에러가 발생하였습니다.");
+    throw new Error("데이터를 가져오는 중 에러가 발생하였습니다. 여기");
   }
 
   return data;

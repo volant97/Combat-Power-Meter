@@ -306,13 +306,14 @@
 
 #### 0.1.36
 
-- AuthenticationContainer
-  - 랜딩 시 로딩화면에서 멈추는 현상 발견
-    - useEffect의 dependency array에 변수 추가
-- 개발자도구 콘솔 에러
-  - 쓰지도 않은 a태그안에 a태그가 들어있다는 에러
-  - 문제 : list icon과 그 내부에 있는 dropdown 둘다 Link 태그를 쓰고 있었음
-  - 해결 : 불필요한 list icon의 Link 태그 제거
+- 트러블슈팅
+  - AuthenticationContainer
+    - 랜딩 시 로딩화면에서 멈추는 현상 발견
+      - useEffect의 dependency array에 변수 추가
+  - 개발자도구 콘솔 에러
+    - 문제 : 쓰지도 않은 a태그안에 a태그가 들어있다는 에러
+    - 원인 : list icon과 그 내부에 있는 dropdown 둘다 Link 태그를 쓰고 있었음
+    - 해결 : 불필요한 list icon의 Link 태그 제거
 
 #### 0.1.37
 
@@ -321,6 +322,17 @@
     - type 재설정
   - 현재 유저 카드 get test 완료
 
+### 2025.01.04
+
+#### 0.1.38
+
+- home page
+  - 유저카드 데이터 map 적용해서 출력
+  - Image 태그 오류 해결
+- next.config
+  - 외부 이미지 주소 허용 설정
+- user img base 상수로 적용
+
 #### +a
 
 - 타입 설치
@@ -328,3 +340,4 @@
   - 컴포넌트화
 - user_cards data
   - 홈페이지에 로직 작성
+- base img 너무 사이즈가 큼

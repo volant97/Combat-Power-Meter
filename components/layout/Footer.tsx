@@ -1,7 +1,7 @@
 import Link from "next/link";
 import HomeIcon from "../icons/HomeIcon";
-import TestLogout from "../TestLogout";
 import Version from "./Version";
+import TestLogout from "../test/TestLogout";
 
 export default function Footer() {
   return (
