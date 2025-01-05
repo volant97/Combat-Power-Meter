@@ -59,7 +59,7 @@ export default function TestPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-pointc text-3xl">유저 닉네임</h1>
+      <h1 className="text-pointc1 text-3xl">유저 닉네임</h1>
       <div>
         {testDatas.map((v, i) => (
           <div key={i}>
@@ -67,7 +67,7 @@ export default function TestPage() {
           </div>
         ))}
       </div>
-      <h1 className="text-pointc text-3xl">유저 카드 리스트</h1>
+      <h1 className="text-pointc1 text-3xl">유저 카드 리스트</h1>
       <div>
         {userCards.map((v, i) => (
           <div key={i}>
@@ -77,7 +77,7 @@ export default function TestPage() {
           </div>
         ))}
       </div>
-      <h1 className="text-pointc text-3xl">현재 유저 카드</h1>
+      <h1 className="text-pointc1 text-3xl">현재 유저 카드</h1>
       <div>
         {userId === currentUserCards[0]?.user_id ? (
           <div>{currentUserCards[0]?.custom_users.nickname}</div>

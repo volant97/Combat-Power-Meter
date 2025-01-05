@@ -47,9 +47,9 @@ export default function ListAndDropdown() {
               : "opacity-0 scale-95 max-h-0 invisible"
           }`}
         >
-          <div className="absolute left-1 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[10px] border-l-transparent border-r-transparent border-b-pointc" />
+          <div className="absolute left-1 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[10px] border-l-transparent border-r-transparent border-b-pointc1" />
           <div
-            className={`absolute left-0 mt-2 w-40 bg-bgc2 border-2 border-pointc rounded-md shadow-lg  overflow-hidden shadow-pointc/30 shadow-rightBottomShadow`}
+            className={`absolute left-0 mt-2 w-40 bg-bgc2 border-2 border-pointc1 rounded-md shadow-lg  overflow-hidden shadow-pointc1/30 shadow-rightBottomShadow`}
           >
             <ul className="flex flex-col m-1 rounded-md ">
               <DropdownList

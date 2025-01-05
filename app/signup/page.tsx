@@ -152,7 +152,7 @@ export default function SignupPage() {
       </label>
       <button
         type="submit"
-        className="w-20 h-12 mt-4 text-lg text-bgc1 font-SDSamliphopangche bg-pointc border-2 border-bgc1 rounded-md"
+        className="w-20 h-12 mt-4 text-lg text-bgc1 font-SDSamliphopangche bg-pointc1 border-2 border-bgc1 rounded-md"
       >
         확인
       </button>

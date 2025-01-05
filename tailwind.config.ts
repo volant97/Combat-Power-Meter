@@ -13,7 +13,8 @@ export default {
         maintextc: "#f7f7f7",
         bgc1: "#1e1e1e",
         bgc2: "#262626",
-        pointc: "#f19e54",
+        pointc1: "#f19e54",
+        pointc2: "#6b7280",
       },
     },
     fontFamily: {
@@ -25,6 +26,7 @@ export default {
       headerShadow: "0 10px 10px -7px rgba(0, 0, 0, 0.5)",
       footerShadow: "0 -10px 10px -7px rgba(0, 0, 0, 0.5)",
       rightBottomShadow: "3px 3px 10px 0px",
+      allDirectionsShadow: "0px 0px 10px 4px",
     },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],

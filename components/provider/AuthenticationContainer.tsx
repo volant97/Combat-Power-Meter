@@ -47,7 +47,7 @@ export default function AuthenticationContainer({ children }: Props) {
       {isAuthInitialized ? (
         children
       ) : (
-        <div className="flex justify-center items-center h-full text-3xl text-pointc">
+        <div className="flex justify-center items-center h-full text-3xl text-pointc1">
           측정중
         </div>
       )}

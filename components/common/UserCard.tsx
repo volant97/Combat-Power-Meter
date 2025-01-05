@@ -11,9 +11,22 @@ interface Props {
 export default function UserCard({ style, userCard }: Props) {
   return (
     <div
-      className={`flex flex-col gap-2 size-full  p-3 bg-bgc2 rounded-md border-2 border-pointc hover:cursor-pointer shadow-pointc/20 shadow-rightBottomShadow ${
-        style === "usercard" && "relative w-3/4 mt-7"
-      }`}
+      className={`flex flex-col gap-2 size-full  p-3 bg-bgc2 rounded-md border-2 hover:cursor-pointer ${
+        // testcode : 스킨 적용 시 활성화 예정
+        // style !== "2" &&
+        // style !== "4" &&
+        "border-pointc2 shadow-black/80 shadow-allDirectionsShadow"
+      }  ${
+        style === "usercard" && "relative w-3/4 mt-7 hover:cursor-default"
+      } `}
+      // testcode
+      // ${
+      //   style === "2" &&
+      //   "border-pointc1 shadow-pointc1/50 shadow-allDirectionsShadow"
+      // } ${
+      //   style === "4" &&
+      //   "border-red-500 shadow-red-500/50 shadow-allDirectionsShadow"
+      // }
     >
       {style === "usercard" && (
         <div className="absolute -top-7 right-1 flex justify-end">
@@ -29,7 +42,7 @@ export default function UserCard({ style, userCard }: Props) {
           className="rounded-md"
         />
       </div>
-      <div className="flex items-center gap-2 h-7 px-2 bg-pointc bg-pointc rounded-md [&_*]:text-bgc1">
+      <div className="flex items-center gap-2 h-7 px-2 bg-pointc1 bg-pointc1 rounded-md [&_*]:text-bgc1">
         <div className="flex items-center gap-[2px]">
           <p className="text-sm">LV</p>
           <p>{userCard.level}</p>

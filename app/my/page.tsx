@@ -8,7 +8,7 @@ export default function MyPage() {
 
   return (
     <div>
-      <span className="text-pointc">{userData?.profile?.nickname}</span>님
+      <span className="text-pointc1">{userData?.profile?.nickname}</span>님
       반갑습니다!
     </div>
   );

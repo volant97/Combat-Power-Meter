@@ -9,19 +9,19 @@ export default function HomePageCopy() {
     <div>
       <div className="flex flex-col gap-4">
         <div className="flex items-end gap-2">
-          <h1 className="text-pointc text-2xl font-bold">[LOVe]</h1>
-          <h2 className="text-pointc text-xl font-bold">LOVE IS WAR</h2>
+          <h1 className="text-pointc1 text-2xl font-bold">[LOVe]</h1>
+          <h2 className="text-pointc1 text-xl font-bold">LOVE IS WAR</h2>
         </div>
         <SortBtnContainer />
         <ul className="flex flex-wrap -mx-2">
           {testArray.map((v, i) => (
             <li key={i} className="w-1/2 h-full p-2">
               <Link href={`/user/${i}`}>
-                <div className="flex flex-col gap-2 size-full p-3 bg-bgc2 rounded-md border-2 border-pointc hover:cursor-pointer shadow-md shadow-orange-500/40">
+                <div className="flex flex-col gap-2 size-full p-3 bg-bgc2 rounded-md border-2 border-pointc1 hover:cursor-pointer shadow-md shadow-orange-500/40">
                   <div className="flex justify-center items-center w-full aspect-square rounded-md !bg-white text-black">
                     사진
                   </div>
-                  <div className="flex items-center gap-2 h-7 px-2 [&_*]:bg-pointc bg-pointc rounded-md [&_*]:text-bgc1">
+                  <div className="flex items-center gap-2 h-7 px-2 [&_*]:bg-pointc1 bg-pointc1 rounded-md [&_*]:text-bgc1">
                     <div className="flex">
                       <p>LV</p>
                       <p>27</p>

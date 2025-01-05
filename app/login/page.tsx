@@ -59,7 +59,7 @@ export default function LoginPage() {
         />
         <Link
           href={`/signup`}
-          className="absolute -top-11 right-0 flex justify-end items-center w-20 h-10 pr-2 text-pointc font-SDSamliphopangche"
+          className="absolute -top-11 right-0 flex justify-end items-center w-20 h-10 pr-2 text-pointc1 font-SDSamliphopangche"
           tabIndex={-1}
         >
           회원가입
@@ -99,7 +99,7 @@ export default function LoginPage() {
 
       <button
         type="submit"
-        className="w-20 h-12 mt-4 text-lg text-bgc1 font-SDSamliphopangche bg-pointc border-2 border-bgc1 rounded-md"
+        className="w-20 h-12 mt-4 text-lg text-bgc1 font-SDSamliphopangche bg-pointc1 border-2 border-bgc1 rounded-md"
       >
         확인
       </button>

@@ -30,15 +30,15 @@ export default function HomePage() {
     <div>
       <div className="flex flex-col gap-4">
         <div className="flex items-end gap-2">
-          <h1 className="text-pointc text-2xl font-bold">[LOVe]</h1>
-          <h2 className="text-pointc text-xl font-bold">LOVE IS WAR</h2>
+          <h1 className="text-pointc1 text-2xl font-bold">[LOVe]</h1>
+          <h2 className="text-pointc1 text-xl font-bold">LOVE IS WAR</h2>
         </div>
         <SortBtnContainer />
         <ul className="flex flex-wrap -mx-2">
           {userCards.map((v, i) => (
             <li key={i} className="w-1/2 h-full p-2">
               <Link href={`/usercard/${v.card_id}`}>
-                <UserCard userCard={v} />
+                <UserCard userCard={v} style={v.card_id.toString()} />
               </Link>
             </li>
           ))}
