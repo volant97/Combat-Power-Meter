@@ -390,6 +390,20 @@
 - api
   - 데이터가 1개일 경우 single() 함수로 명시
 
+#### 0.1.46
+
+- 프로필용 base img 작은 사이즈 스토리지에 저장
+- cardedit page
+  - 첫 카드 제작 안내
+  - 카드 여부에 따라서 조건부 렌더링
+- api
+  - return에 type 추가
+- 트러블슈팅
+  - LoginOrMyCard
+    - UserIcon 조건부 렌더링
+      - 데이터 비동기 순서에 의한 에러
+        - useEffect의 dependency array에 userData를 추가함으로써 데이터가 들어온 이후에도 작동되게 함
+
 #### +a
 
 - +a

@@ -1,7 +1,7 @@
 import Logo from "@/components/icons/Logo";
 import ListAndDropdown from "./dropdown/ListAndDropdown";
-import LoginOrMyProfile from "./LoginOrMyCard";
 import Link from "next/link";
+import LoginOrMyCard from "./LoginOrMyCard";
 
 export default function Header() {
   return (
@@ -13,7 +13,7 @@ export default function Header() {
       >
         <Logo />
       </Link>
-      <LoginOrMyProfile />
+      <LoginOrMyCard />
     </header>
   );
 }
