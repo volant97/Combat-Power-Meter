@@ -36,7 +36,7 @@ export default function LoginOrMyCard() {
     <>
       {isLogin ? (
         <Link
-          href={`${userCardId ? `usercard/${userCardId}` : "/cardedit"}`}
+          href={`${userCardId ? `/usercard/${userCardId}` : "/cardedit"}`}
           className="absolute right-0 flex justify-end items-center h-[8dvh] aspect-square pr-5"
         >
           <UserIcon />

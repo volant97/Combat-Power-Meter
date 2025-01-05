@@ -422,6 +422,10 @@
 - 상태 값 변경 로직 보완
   - LoginOrMyCard의 setUserCardId(null) 처럼 if(!data)일 때처럼 상태 값이 없어지면 null을 넣어줌
 
-#### +a
+#### 0.1.48
 
-- +a
+- 트러블슈팅
+  - LoginOrMyCard
+    - 문제 : 홈 이외의 다른 페이지에서 아이콘 클릭 시 404 page로 넘어감
+    - 원인 : Link href에서 주소 앞에 "/"를 빼먹음
+    - 해결 : "/" 작성
