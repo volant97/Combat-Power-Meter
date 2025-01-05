@@ -1,4 +1,4 @@
-export interface UserStateType {
+export interface UserStateProfileType {
   uid: string;
   nickname: string;
   email: string;

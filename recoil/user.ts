@@ -1,13 +1,19 @@
 import { atom } from "recoil";
-import { UserStateType } from "@/types/user-type";
+import { UserStateProfileType } from "@/types/user-type";
 
-export interface UserState {
+export interface UserStateType {
   id: string;
-  profile: UserStateType | null;
+  profile: UserStateProfileType;
 }
 
-/** 로그인 여부 */
-export const userState = atom<UserState | null>({
+// 로그인 상태
+export const isLoginState = atom<boolean>({
+  key: "isLoginState",
+  default: false,
+});
+
+// 유저 상태
+export const userState = atom<UserStateType | null>({
   key: "userState",
   default: null,
 });

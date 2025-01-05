@@ -1,6 +1,8 @@
 "use client";
 
+import { isLoginState } from "@/recoil/user";
 import { useRouter } from "next/navigation";
+import { useSetRecoilState } from "recoil";
 
 interface Props {
   select: string;
@@ -11,8 +13,11 @@ interface Props {
 export default function LoginModal({ select, nickname, setIsModal }: Props) {
   const router = useRouter();
 
+  const setIsLogin = useSetRecoilState(isLoginState);
+
   const modalBtnOnClickHandler = () => {
     setIsModal(false);
+    setIsLogin(true);
     router.push("/");
   };
 

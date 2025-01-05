@@ -16,6 +16,8 @@ export default function CardEditPage() {
 
       if (data) {
         setUserCard(data);
+      } else {
+        setUserCard(null);
       }
     } catch (error) {
       alert(error);
@@ -24,7 +26,8 @@ export default function CardEditPage() {
 
   useEffect(() => {
     fetchCurrentUsercardData();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userData]);
 
   return (
     <>
@@ -55,7 +58,7 @@ export default function CardEditPage() {
               를 제작해 보세요.
             </p>
           </div>
-          <button className="absolute bottom-0 w-4/5 px-3 py-2 text-2xl font-SDSamliphopangche text-maintextc bg-pointc1 border-2 border-bgc2 rounded-lg shadow-pointc1/40 shadow-allDirectionsShadow transform transition-all hover:scale-110 hover:shadow-pointc1/80 active:scale-95 active:shadow-pointc1/10">
+          <button className="absolute bottom-0 w-2/3 px-3 py-2 text-2xl font-SDSamliphopangche text-maintextc bg-pointc1 border-2 border-bgc2 rounded-lg shadow-pointc1/40 shadow-allDirectionsShadow transform transition-all hover:scale-110 hover:shadow-pointc1/80 active:scale-95 active:shadow-pointc1/10">
             카드 제작
           </button>
         </div>

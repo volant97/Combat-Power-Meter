@@ -12,6 +12,7 @@ import UserCard from "@/components/common/UserCard";
 export default function HomePage() {
   const [userCards, setUserCards] = useState<GetUserCardDataType[]>([]);
   const currentUserId = useRecoilValue(userState)?.id;
+  const testcodeNick = useRecoilValue(userState)?.profile.nickname;
 
   const fetchUserCardData = async () => {
     try {
@@ -29,6 +30,10 @@ export default function HomePage() {
   return (
     <div>
       <div className="flex flex-col gap-4">
+        {/* testcode */}
+        <h2 className="text-pointc1 text-xl font-bold">
+          isLogin : {currentUserId ? testcodeNick : "로그아웃"}
+        </h2>
         <div className="flex items-end gap-2">
           <h1 className="text-pointc1 text-2xl font-bold">[LOVe]</h1>
           <h2 className="text-pointc1 text-xl font-bold">LOVE IS WAR</h2>

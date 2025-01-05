@@ -404,6 +404,24 @@
       - 데이터 비동기 순서에 의한 에러
         - useEffect의 dependency array에 userData를 추가함으로써 데이터가 들어온 이후에도 작동되게 함
 
+#### 0.1.47
+
+- 트러블슈팅
+  - recoil
+    - 문제 : 기존 userState로 상태 관리 할때는 원하는 구간에서 원하는 상태로 변경하기 까다로워서 로그인 여부를 파악하기 어려웠음
+      - 예를 들어 모달에서 로그인을 시킬 때 이미 setUserState된 상태에서 변경할 데이터가 없기 때문에 상태 변경을 못했음
+    - 해결 : isLogin 상태값 전역 관리
+  - AuthenticationContainer
+    - 문제 : 로그인, 로그아웃 시 상태값 변화를 감지 못함
+    - 해결1 : userState가 변경하는 모든 부분에 isLogin 상태값도 변경
+    - 해결2 : useEffect의 dependency array에 isLogin를 추가함으로써 로그인, 회원가입, 로그아웃 등을 실행할 때 상태값을 변경 가능
+  - LoginOrMyCard
+    - 문제 : 카드O 유저 로그인 → 로그아웃 → 카드X 유저 로그인 → user icon 클릭 → 카드 있는 것처럼 인식되어 card page로 넘어감
+    - 해결 : if(!data)일 때 setUserCardId(null)을 통해서 상태 값에 null을 넣어줌으,로써 오작동 방지
+      - 카드 제작 안내 페이지로 원활히 이동 됨
+- 상태 값 변경 로직 보완
+  - LoginOrMyCard의 setUserCardId(null) 처럼 if(!data)일 때처럼 상태 값이 없어지면 null을 넣어줌
+
 #### +a
 
 - +a

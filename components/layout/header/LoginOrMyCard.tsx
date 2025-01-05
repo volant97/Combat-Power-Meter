@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { userState } from "@/recoil/user";
+import { isLoginState, userState } from "@/recoil/user";
 import { useRecoilValue } from "recoil";
 import UserIcon from "@/components/icons/UserIcon";
 import LoginIcon from "@/components/icons/LoginIcon";
@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { getUsercardDataForCurrentUser } from "@/lib/api/usercard-api";
 
 export default function LoginOrMyCard() {
+  const isLogin = useRecoilValue(isLoginState);
   const userData = useRecoilValue(userState);
   const [userCardId, setUserCardId] = useState<string | null>(null);
 
@@ -18,6 +19,8 @@ export default function LoginOrMyCard() {
 
       if (data) {
         setUserCardId(data.card_id as string);
+      } else {
+        setUserCardId(null);
       }
     } catch (error) {
       alert(error);
@@ -26,11 +29,12 @@ export default function LoginOrMyCard() {
 
   useEffect(() => {
     fetchCurrentUsercardData();
-  }, [userData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userData, isLogin]);
 
   return (
     <>
-      {userData ? (
+      {isLogin ? (
         <Link
           href={`${userCardId ? `usercard/${userCardId}` : "/cardedit"}`}
           className="absolute right-0 flex justify-end items-center h-[8dvh] aspect-square pr-5"
