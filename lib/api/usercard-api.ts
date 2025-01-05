@@ -25,7 +25,8 @@ export async function getUsercardDataForCurrentUser(uid: string) {
         user_img
       )`
     )
-    .eq("user_id", uid);
+    .eq("user_id", uid)
+    .single();
 
   if (error) {
     throw new Error("데이터를 가져오는 중 에러가 발생하였습니다.");
@@ -44,7 +45,8 @@ export async function getUsercardDataForPageUser(cardId: string) {
         user_img
       )`
     )
-    .eq("card_id", cardId);
+    .eq("card_id", cardId)
+    .single();
 
   if (error) {
     throw new Error("데이터를 가져오는 중 에러가 발생하였습니다.");

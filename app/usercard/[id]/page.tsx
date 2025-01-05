@@ -1,11 +1,8 @@
 "use client";
 
 import UserCard from "@/components/common/UserCard";
-import { BASE_USER_IMG } from "@/constants/user";
 import { getUsercardDataForPageUser } from "@/lib/api/usercard-api";
-import { formatDateStyle1 } from "@/lib/common/format-date";
 import { GetUserCardDataType } from "@/types/usercard-type";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -18,7 +15,7 @@ export default function UsercardPage() {
   const fetchPageUsercardData = async () => {
     try {
       const data = await getUsercardDataForPageUser(cardId as string);
-      setUserCard(data[0]);
+      setUserCard(data);
     } catch (error) {
       alert(error);
     }

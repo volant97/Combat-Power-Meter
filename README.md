@@ -375,6 +375,21 @@
   - 스킨 적용 시 활성화할 CSS 작성
   - 기본 스킨으로 초기 설정
 
+#### 0.1.45
+
+- usercard
+  - 닉네임 넓이 초과 시 ...으로 표시
+    - truncate
+  - cursor-pointer 재설정
+- 트러블슈팅
+  - AuthenticationContainer
+    - 랜딩 시 로딩화면에서 멈추는 현상 다시 발견
+      - getSession 함수 추가
+      - 모든 로직 개편
+      - 로직 TIDY
+- api
+  - 데이터가 1개일 경우 single() 함수로 명시
+
 #### +a
 
 - +a

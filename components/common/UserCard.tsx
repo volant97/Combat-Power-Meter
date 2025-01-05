@@ -11,14 +11,12 @@ interface Props {
 export default function UserCard({ style, userCard }: Props) {
   return (
     <div
-      className={`flex flex-col gap-2 size-full  p-3 bg-bgc2 rounded-md border-2 hover:cursor-pointer ${
+      className={`flex flex-col gap-2 size-full  p-3 bg-bgc2 rounded-md border-2 ${
         // testcode : 스킨 적용 시 활성화 예정
         // style !== "2" &&
         // style !== "4" &&
         "border-pointc2 shadow-black/80 shadow-allDirectionsShadow"
-      }  ${
-        style === "usercard" && "relative w-3/4 mt-7 hover:cursor-default"
-      } `}
+      }  ${style === "usercard" && "relative w-3/4 mt-7"} `}
       // testcode
       // ${
       //   style === "2" &&
@@ -47,7 +45,7 @@ export default function UserCard({ style, userCard }: Props) {
           <p className="text-sm">LV</p>
           <p>{userCard.level}</p>
         </div>
-        <div className="flex w-full">{userCard.custom_users.nickname}</div>
+        <div className="truncate">{userCard.custom_users.nickname}</div>
       </div>
       <div className="flex flex-col">
         <div className="flex justify-between gap-2 px-2">
