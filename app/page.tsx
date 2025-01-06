@@ -34,6 +34,7 @@ export default function HomePage() {
         <h2 className="text-pointc1 text-xl font-bold">
           isLogin : {currentUserId ? testcodeNick : "로그아웃"}
         </h2>
+        <Link href={"/cardedit"}>카드수정</Link>
         <div className="flex items-end gap-2">
           <h1 className="text-pointc1 text-2xl font-bold">[LOVe]</h1>
           <h2 className="text-pointc1 text-xl font-bold">LOVE IS WAR</h2>

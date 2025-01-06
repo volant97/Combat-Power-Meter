@@ -397,7 +397,7 @@
   - 첫 카드 제작 안내
   - 카드 여부에 따라서 조건부 렌더링
 - api
-  - return에 type 추가
+  - return에 as type 추가
 - 트러블슈팅
   - LoginOrMyCard
     - UserIcon 조건부 렌더링
@@ -429,3 +429,32 @@
     - 문제 : 홈 이외의 다른 페이지에서 아이콘 클릭 시 404 page로 넘어감
     - 원인 : Link href에서 주소 앞에 "/"를 빼먹음
     - 해결 : "/" 작성
+
+### 2025.01.06
+
+#### 0.1.49
+
+- 트러블슈팅
+  - AuthenticationContainer
+    - 랜딩 시 로딩화면에서 멈추는 현상 다시 발견
+      - 원인 예상 : dev된 직후에만 불규칙적으로 발생하는 것으로 보아 dev mode가 원인일 수도 있음
+      - 해결 방안 모색
+        - windowReload (X)
+          - 초기 랜딩 시 특정 로직 수행 후 리로드
+          - navigationEntry?.type === "reload"
+            - 새로고침이 되었을 경우에는 로직에서 return하여 무한루프 방지
+          - 현재 로직에서 적용 시 에상치 못한 에러가 지속적으로 발생
+        - getSession (X)
+          - getSession과 if문으로 예외처리까지 했지만 가독성이 떨어지고 복잡함
+        - getUser (X)
+          - onAuthStateChange 대안으로 작성
+          - onAuthStateChange와 비슷한 속도이거나 조금 느릴 것으로 판단
+      - 해결
+        - onAuthStateChange (O)
+          - 기존 코드 최대한 유지
+          - try catch finally로 예외 처리
+          - .then을 통해서 비동기 작성 수행
+          - useEffect의 dependency array에 전역 상태인 isLogin만 기입하면 정상 작동 됨
+            - 로그인, 로그아웃 모달에서 상태 변경하기 때문에
+      - 추가 사항
+        - build 이후에도 해당 현상 발생하는지 확인 필요

@@ -26,19 +26,19 @@ export default function NoticesPage() {
       <div className="h-4" />
       <p>단, 기존의 방법은 원활한 소통이 어려웠죠.</p>
       <p>
-        그래서 부족한 실력이지만, 알고 있던 코딩 지식을 활용해서 편하게{" "}
+        그래서 부족한 실력이지만, 알고 있던 코딩 지식을 활용해서 편하게
         <span className="text-pointc1">소통</span>할 수 있는 서비스를 만들어보자
         다짐했어요.
       </p>
 
       <div className="h-4" />
       <p>
-        연맹원의{" "}
+        연맹원의
         <span className="text-pointc1">정보들을 한눈에 볼 수 있도록</span> 하고,
       </p>
       <p>
-        연맹원들이{" "}
-        <span className="text-pointc1">피드백을 원활하게 해줄 수 있도록</span>{" "}
+        연맹원들이
+        <span className="text-pointc1">피드백을 원활하게 해줄 수 있도록</span>
         만들었어요.
       </p>
 

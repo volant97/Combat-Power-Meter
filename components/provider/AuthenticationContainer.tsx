@@ -16,56 +16,32 @@ export default function AuthenticationContainer({ children }: Props) {
   const setUser = useSetRecoilState(userState);
 
   const checkAuthInitialized = async () => {
-    try {
-      // 초기 세션 가져오기
-      const {
-        data: { session },
-        error: sessionError,
-      } = await supabase.auth.getSession();
-
-      // 세션 에러 처리
-      if (sessionError) {
-        console.error("세션 에러 발생", sessionError.message);
-        setUser(null);
-        setIsLogin(false);
-        return;
-      }
-
-      // 세션이 존재하는 경우
-      if (session) {
-        // 사용자 데이터 가져오기
-        const { data, error: userDataError } = await supabase
-          .from("custom_users")
-          .select("*")
-          .eq("uid", session.user.id)
-          .single();
-
-        // 사용자 데이터 가져오기 실패 에러 처리
-        if (userDataError) {
-          console.error("사용자 데이터 에러 발생", userDataError.message);
+    // testcode : 빌드 이후 다시 확인 (측정중에서 멈추는 현상이 불규칙하게 발생)
+    supabase.auth.onAuthStateChange((event, session) => {
+      try {
+        if (session) {
+          supabase
+            .from("custom_users")
+            .select()
+            .eq("uid", session.user.id)
+            .single()
+            .then((response) => {
+              const profile = response.data;
+              setUser({ id: session.user.id, profile });
+              setIsLogin(true);
+            });
+        } else {
           setUser(null);
           setIsLogin(false);
-          return;
-        } else {
-          // 사용자 데이터 가져오기 설공 및 상태 설정
-          setUser({ id: session.user.id, profile: data });
-          setIsLogin(true);
         }
-      } else {
-        // 세션이 없을 경우
+      } catch (error) {
+        alert(error);
         setUser(null);
         setIsLogin(false);
+      } finally {
+        setIsAuthInitialized(true);
       }
-    } catch (unexpectedError) {
-      // 세션 초기화 에러 처리
-      console.error("인증 초기화 중 에러 발생", unexpectedError);
-      alert("인증 초기화 중 에러 발생");
-      setUser(null);
-      setIsLogin(false);
-    } finally {
-      // 인증 초기화 완료
-      setIsAuthInitialized(true);
-    }
+    });
   };
 
   useEffect(() => {
